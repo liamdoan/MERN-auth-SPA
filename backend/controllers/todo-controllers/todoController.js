@@ -24,7 +24,7 @@ module.exports.createTodos = async (req, res) => {
 
         res.status(201).json({
             message: "new task created!",
-            data: newTodo
+            newTodo
         });
     } catch (error) {
         console.error(error);
