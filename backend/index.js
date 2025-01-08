@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const authRoutes = require("./routes/auth.js");
-const todoRoutes = require("./routes/todoRoutes.js")
+const todoRoutes = require("./routes/todoRoutes.js");
 
 app.use('/api/auth', authRoutes);
 app.use('/api/todo', todoRoutes);
@@ -25,6 +25,4 @@ app.use('/api/todo', todoRoutes);
 app.listen(PORT, () => {
     connectMongo();
     console.log(`Server is running on port ${PORT}`)
-})
-
-
+});
