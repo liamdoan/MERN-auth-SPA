@@ -39,7 +39,6 @@ function App() {
     }, [])
 
     useEffect(() => {
-        console.log('User:', user);
         console.log('Is Authenticated:', isUserAuthenticated);
     }, [user]);
 
