@@ -15,7 +15,7 @@ const PasswordForgot = () => {
     const [messageFailed, setMessageFailed] = useState<string>("");
     const [submitSuccess, setSubmitSuccess] = useState<Boolean>(false);
 
-    const handleSubmitEmail = async (e: any) => {
+    const handleSubmitEmail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 

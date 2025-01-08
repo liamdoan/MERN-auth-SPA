@@ -36,7 +36,7 @@ const Login = () => {
         setPassword('');
     }
 
-    const handleLogin = async (e: any) => {
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
         dispatch(loginStart());

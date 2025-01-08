@@ -28,7 +28,7 @@ const UserHome = () => {
         return <Navigate to="/login" />;
     }
 
-    const handleLogout = async (e: any) => {
+    const handleLogout = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setLoading(true);
 

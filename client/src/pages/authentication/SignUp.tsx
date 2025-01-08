@@ -23,7 +23,7 @@ const SignUp = () => {
         setPassword("");
     };
 
-    const handleSignup = async (e: any) => {
+    const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 

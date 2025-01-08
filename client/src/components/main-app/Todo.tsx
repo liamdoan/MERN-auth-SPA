@@ -38,7 +38,7 @@ const Todo = () => {
         fetchTodos();
     }, []);
 
-    const addTask = async (e: any) => {
+    const addTask = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         try {

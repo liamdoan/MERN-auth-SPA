@@ -40,7 +40,7 @@ const EmailVerificationCode = () => {
         }
     };
 
-    const handleSubmitCode = async (e: any) => {
+    const handleSubmitCode = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         setLoading(true);

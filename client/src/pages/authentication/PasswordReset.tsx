@@ -30,7 +30,7 @@ const PasswordReset = () => {
         };
     };
 
-    const handleSubmitResetPassword = async (e: any) => {
+    const handleSubmitResetPassword = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
 
