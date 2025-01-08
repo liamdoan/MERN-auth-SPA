@@ -5,20 +5,21 @@ import axios from 'axios';
 import { baseUrl } from '../../utils/baseUrl';
 import Spinner from '../loading/Spinner';
 import { RootState } from '../../redux/store';
+import { TodoType, UserType } from '../../utils/types';
 
 const Todo = () => {
-    const [todos, setTodos] = useState<any>([]);
-    const [todo, setTodo] = useState('');
-    const [desc, setDesc] = useState('');
+    const [todos, setTodos] = useState<TodoType[]>([]);
+    const [todo, setTodo] = useState<string>('');
+    const [desc, setDesc] = useState<string>('');
 
-    const [todoEditing, setTodoEditing] = useState(null);
+    const [todoEditing, setTodoEditing] = useState<string | null>(null);
 
-    const [editingText, setEditingText] = useState('');
-    const [editingDesc, setEditingDesc] = useState('');
+    const [editingText, setEditingText] = useState<string>('');
+    const [editingDesc, setEditingDesc] = useState<string>('');
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<Boolean>(true);
 
-    const user: any = useSelector((state: RootState) => state.user.user);
+    const user = useSelector((state: RootState) => state.user.user) as UserType | null;
     
     useEffect(() => {
         const fetchTodos = async () => {
@@ -116,7 +117,7 @@ const Todo = () => {
 
     return (
         <div className={styles.wrapper}>
-            <h1 data-testid="app-title">Hello, {user.name}</h1>
+            <h1 data-testid="app-title">Hello, {user?.name}</h1>
             <form className={styles.form} onSubmit={addTask}>
                 <div className={styles.inputColumn}>
                     <input
@@ -141,7 +142,7 @@ const Todo = () => {
             {loading ? (
                 <Spinner />
             ) : (
-                todos.map((todo: any) => (
+                todos.map((todo: TodoType) => (
                     <div className={styles.todoRow} key={todo._id}>
                         {todoEditing === todo._id ? (
                             <div className={styles.inputEditWrap}>
