@@ -16,9 +16,11 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-const authRoutes = require("./routes/auth.js")
+const authRoutes = require("./routes/auth.js");
+const todoRoutes = require("./routes/todoRoutes.js")
 
 app.use('/api/auth', authRoutes);
+app.use('/api/todo', todoRoutes);
 
 app.listen(PORT, () => {
     connectMongo();
