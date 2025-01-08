@@ -1,14 +1,14 @@
 import styles from "./UserHome.module.css";
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../redux/store"
+import { RootState } from "../../redux/store"
 import { Navigate } from "react-router-dom";
-import { logout } from "../redux/slices/userSlice";
+import { logout } from "../../redux/slices/userSlice";
 import { useState } from "react";
-import LoadingBar from "../components/loading/LoadingBar";
-import Spinner from "../components/loading/Spinner";
-import { userLogout } from "../utils/authApiCalls";
-import Todo from "../components/main-app/Todo";
-import { UserType } from "../utils/types";
+import LoadingBar from "../../components/loading/LoadingBar";
+import Spinner from "../../components/loading/Spinner";
+import { userLogout } from "../../utils/authApiCalls";
+import Todo from "../../components/main-app/Todo";
+import { UserType } from "../../utils/types";
 
 const UserHome = () => {
     const [loading, setLoading] = useState<Boolean>(false);
