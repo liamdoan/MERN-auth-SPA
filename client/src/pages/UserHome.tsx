@@ -7,6 +7,7 @@ import { useState } from "react";
 import LoadingBar from "../components/loading/LoadingBar";
 import Spinner from "../components/loading/Spinner";
 import { userLogout } from "../utils/authApiCalls";
+import Todo from "../components/main-app/Todo";
 
 const UserHome = () => {
     const [loading, setLoading] = useState<Boolean>(false);
@@ -47,21 +48,19 @@ const UserHome = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.navbar}>
+                <div className={styles.userInfo}>
+                    <p>Hello, {user.name}</p>
+                    <p>Your email is: {user.email}</p>
+                    <p>You joined on: {new Date (user.createdAt).toLocaleString()}</p>
+                    <p>You last logged in on: {user && new Date(user.lastLogin).toLocaleString()}</p>
+                </div>
                 <button className={styles.logoutButton} onClick={handleLogout}>Log Out</button>
             </div>
             <div className={styles.mainSection}>
-                <h1>This is user homepage</h1>
-                <div className={styles.infoWrapper}>
-                    <div className={styles.infoText}>
-                        <p>Hello: {user.name}</p>
-                        <p>Your email is: {user.email}</p>
-                        <p>You joined on: {new Date (user.createdAt).toLocaleString()}</p>
-                        <p>You last logged in on: {user && new Date(user.lastLogin).toLocaleString()}</p>
-                    </div>
-                    { loading && <LoadingBar /> }
-                    { messageSuccess && <span className={styles.messageSuccess}>{messageSuccess}</span> }
-                    { messageFailed && <span className={styles.messageFailed}>{messageFailed}</span> }
-                </div>
+                <Todo />
+                { loading && <LoadingBar /> }
+                { messageSuccess && <span className={styles.messageSuccess}>{messageSuccess}</span> }
+                { messageFailed && <span className={styles.messageFailed}>{messageFailed}</span> }
             </div>
         </div>
     )
