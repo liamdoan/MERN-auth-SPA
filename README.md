@@ -1,6 +1,6 @@
 ## Description
 
-Full authentication SPA, combined of 2 projects, [Auth-Model](https://github.com/liamdoan/react-MERN-auth-full) and [App](https://github.com/liamdoan/todo_app_mern)
+Full authentication SPA, combined of 2 projects, [Auth-Model](https://github.com/liamdoan/react-MERN-auth-module) and [App](https://github.com/liamdoan/todo_app_mern)
 with React-Nodejs-Espress-MongoDB, redux. After loggin in, users can perform CRUD operation, and `see only their own data`. (screenshots below)
 
 - After user signs up, an email with verification code is sent to user email
