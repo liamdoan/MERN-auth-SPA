@@ -17,7 +17,8 @@ module.exports.updateUserInfo = async (req, res) => {
             user.name = name;
         };
 
-        if (email) {
+        // if updated email is the same as current email, skip this block
+        if (email && email !== user.email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!emailRegex.test(email)) {
@@ -26,9 +27,9 @@ module.exports.updateUserInfo = async (req, res) => {
                 })
             };
 
-            const existedEmail = await userModel.findOne({email});
+            const existedUser = await userModel.findOne({email});
 
-            if (existedEmail) {
+            if (existedUser && (existedUser._id.toString() !== user._id.toString())) {
                 return res.status(400).json({
                     message: "Email has already existed!"
                 })
