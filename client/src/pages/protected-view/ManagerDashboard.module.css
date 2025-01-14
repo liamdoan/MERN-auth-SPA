@@ -1,0 +1,28 @@
+.spinnerWrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    background: #0a0a0a;
+    height: 100vh;
+    padding: 10px;
+}
+
+.userTable {
+    color: white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.userTable th,
+.userTable td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+.userTable th {
+    background-color: rgb(100, 100, 100);
+}
