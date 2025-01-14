@@ -1,6 +1,6 @@
 const userModel = require("../../../models/userModel");
 
-module.exports.adminUpdateUserRole = async (req, res) => {
+module.exports.updateUserRole = async (req, res) => {
     const {userId} = req.params;
     const {roles} = req.body;
 
