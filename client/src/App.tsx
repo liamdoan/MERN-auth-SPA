@@ -11,6 +11,8 @@ import Login from './pages/authentication/Login'
 import EmailVerificationCode from './pages/authentication/EmailVerificationCode'
 import PasswordForgot from './pages/authentication/PasswordForgot'
 import PasswordReset from './pages/authentication/PasswordReset'
+import ProtectedRouteAdmin from './protected-route/ProtectedRouteAdmin'
+import AdminDashboard from './pages/protected-view/AdminDashboard'
 // import ProtectedRoute from './protected-route/ProtectedRoute' // Used if this project expands
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -48,6 +50,10 @@ function App() {
                 <Route path="/" element={<GeneralHome />}/>
                  {/* protected candidate HOME */}
                 <Route path="/home" element={<UserHome />}/>
+                <Route
+                    path="/admin-dashboard"
+                    element={<ProtectedRouteAdmin component={<AdminDashboard />} />}
+                />
                 <Route path="/sign-up" element={<SignUp />}/>
                 <Route path="/email-verification" element={<EmailVerificationCode />}/>
                 <Route path="/login" element={<Login />}/>
