@@ -1,6 +1,6 @@
 const userModel = require("../../../models/userModel");
 
-module.exports.adminDeleteUser = async (req, res) => {
+module.exports.deleteUser = async (req, res) => {
     const {userId} = req.params;
 
     try {
