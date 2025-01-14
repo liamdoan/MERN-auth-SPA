@@ -9,8 +9,10 @@ export interface TodoType {
 }
 
 export interface UserType {
+    _id: string,
     name: string,
     email: string,
+    roles: string[],
     lastLogin: string,
     isVerified: boolean,
     createdAt: string,
