@@ -13,6 +13,8 @@ import PasswordForgot from './pages/authentication/PasswordForgot'
 import PasswordReset from './pages/authentication/PasswordReset'
 import ProtectedRouteAdmin from './protected-route/ProtectedRouteAdmin'
 import AdminDashboard from './pages/protected-view/AdminDashboard'
+import ProtectedRouteManager from './protected-route/ProtectedRouteManager'
+import ManagerDashboard from './pages/protected-view/ManagerDashboard'
 // import ProtectedRoute from './protected-route/ProtectedRoute' // Used if this project expands
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -53,6 +55,10 @@ function App() {
                 <Route
                     path="/admin-dashboard"
                     element={<ProtectedRouteAdmin component={<AdminDashboard />} />}
+                />
+                <Route
+                    path="/manager-dashboard"
+                    element={<ProtectedRouteManager component={<ManagerDashboard />} />}
                 />
                 <Route path="/sign-up" element={<SignUp />}/>
                 <Route path="/email-verification" element={<EmailVerificationCode />}/>
