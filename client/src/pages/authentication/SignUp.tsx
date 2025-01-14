@@ -1,9 +1,9 @@
 import styles from './SignUp.module.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Input from '../../components/auth-form-components/Input';
-import SubmitButton from '../../components/auth-form-components/SubmitButton';
-import PasswordStrengthIndicator from '../../components/auth-form-components/PasswordStrengthIndicator';
+import Input from '../../components/auth-model/auth-form-components/Input';
+import SubmitButton from '../../components/auth-model/auth-form-components/SubmitButton';
+import PasswordStrengthIndicator from '../../components/auth-model/auth-form-components/PasswordStrengthIndicator';
 import LoadingBar from '../../components/loading/LoadingBar';
 import { userSignUp } from '../../utils/authApiCalls';
 

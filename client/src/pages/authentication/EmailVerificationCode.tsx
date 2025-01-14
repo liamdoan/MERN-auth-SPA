@@ -1,7 +1,7 @@
 import styles from "./EmailVerificationCode.module.css";
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import SubmitButton from '../../components/auth-form-components/SubmitButton';
+import SubmitButton from '../../components/auth-model/auth-form-components/SubmitButton';
 import LoadingBar from '../../components/loading/LoadingBar';
 import { emailVerificationCode } from '../../utils/authApiCalls';
 

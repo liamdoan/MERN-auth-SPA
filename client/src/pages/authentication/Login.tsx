@@ -1,8 +1,8 @@
 import styles from './Login.module.css';
 import { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import Input from '../../components/auth-form-components/Input';
-import SubmitButton from '../../components/auth-form-components/SubmitButton';
+import Input from '../../components/auth-model/auth-form-components/Input';
+import SubmitButton from '../../components/auth-model/auth-form-components/SubmitButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginFailed, loginStart, loginSuccessful } from '../../redux/slices/userSlice';
 import { RootState } from '../../redux/store';
