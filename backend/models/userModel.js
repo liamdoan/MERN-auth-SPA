@@ -14,6 +14,12 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true
     },
+    roles: {
+        // an account can have multiple roles
+        type: [String],
+        enum: ['admin', 'manager', 'user'],
+        default: ['user']
+    },
     lastLogin: {
         type: Date,
         default: Date.now
