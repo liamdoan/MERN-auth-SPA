@@ -1,0 +1,77 @@
+.wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.arrow {
+    color: rgb(248, 187, 0);
+    padding: 8px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+.arrow:hover {
+    color: rgb(248, 203, 0);;
+}
+
+.dropdownPanel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: black;
+    z-index: 10;
+}
+
+.roleLabel {
+    display: block;
+    margin: 4px 0;
+    color: white;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.roleLabel:hover {
+    cursor: pointer;
+    color: black;
+    background-color: rgb(248, 203, 0);
+}
+
+.roleCheckbox {
+    width:1.1rem;
+    height: 1.1rem;
+    margin-right: 12px;
+    accent-color: black;
+}
+.roleCheckbox:checked {
+    accent-color: green;
+}
+
+.buttonWrapper {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cancelButton {
+    background-color: rgb(175, 175, 175);
+    transition: background-color 0.2s ease-in-out;
+}
+.cancelButton:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+.saveButton {
+    color: white;
+    background-color: green;
+    transition: background-color 0.2s ease-in-out;
+}
+.saveButton:hover {
+    background-color: rgb(0, 161, 0);    
+}
+.saveButton:disabled {
+    color: rgb(167, 167, 167);
+    background-color: rgb(97, 97, 97);
+    cursor: not-allowed
+}
