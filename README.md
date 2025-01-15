@@ -27,21 +27,21 @@ Database:
 
 ## Screenshot
 
-- "Admin" role view:
-  ![Admin homepage](client/public/screenshots/homepage-admin.PNG)
-
 - "admin" dashboard, admin can manipulate database:
   ![admin dashboard edit roles](client/public/screenshots/dashboard-admin-assign-roles.PNG)
   ![admin dashboard edit info](client/public/screenshots/dashboard-admin-edit.PNG)
   ![admin dashboard delete](client/public/screenshots/dashboard-admin-delete.PNG)
 
-- "Manager" role view:
-  ![Manager homepage](client/public/screenshots/homepage-manager.PNG)
+- "Admin" homepage:
+  ![Admin homepage](client/public/screenshots/homepage-admin.PNG)
 
 - "Manager" dashboard, read only:
   ![manager dashboard](client/public/screenshots/dashboard-manager.PNG)
 
-- "User" role view:
+- "Manager" homepage:
+  ![Manager homepage](client/public/screenshots/homepage-manager.PNG)
+
+- "User" homepage:
   ![Main View](client/public/screenshots/homepage-user.PNG)
 
 - Email view:
