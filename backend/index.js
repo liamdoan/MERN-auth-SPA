@@ -10,7 +10,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: process.env.DEVELOPMENT_CLIENT_URL,
+    origin: '*',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
