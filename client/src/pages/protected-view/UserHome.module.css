@@ -29,12 +29,3 @@ p {
     flex-direction: column;
     justify-content: center;
 }
-
-.infoWrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: #2d2d2d;
-    padding: 2rem;
-    border-radius: 10px;
-    color: white;
-}
