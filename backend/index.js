@@ -9,6 +9,16 @@ const dotenv = require('dotenv');
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors({
+    origin: process.env.DEVELOPMENT_CLIENT_URL,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.use(express.json());
+app.use(cookieParser());
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://mern-auth-spa-client.vercel.app');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -19,14 +29,6 @@ app.use((req, res, next) => {
     }
     next();
 });
-
-app.use(cors({
-    origin: process.env.DEVELOPMENT_CLIENT_URL,
-    credentials: true
-}));
-
-app.use(express.json());
-app.use(cookieParser());
 
 const authRoutes = require("./routes/auth.js");
 const todoRoutes = require("./routes/todoRoutes.js");
