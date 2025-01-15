@@ -7,15 +7,8 @@
 
 .wrapper {
     background: #0a0a0a;
-    min-height: 100vh
-}
-
-.navbar {
-    padding: 0 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    min-height: 100vh;
+    padding: 10px;
 }
 
 .userInfo {
@@ -28,21 +21,6 @@
 p {
     padding: 0;
     margin: 0;
-}
-
-.logoutButton {
-    width: 100px;
-    align-self: center;
-    padding:10px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgb(223, 182, 0);
-    transition: background-color 0.2s ease-in-out;
-}
-.logoutButton:hover {
-    background-color: rgb(248, 203, 0);
 }
 
 .mainSection {
@@ -59,17 +37,4 @@ p {
     padding: 2rem;
     border-radius: 10px;
     color: white;
-}
-
-.messageSuccess,
-.messageFailed {
-    text-align: center;
-    font-style: italic;
-    margin: 5px 0;
-}
-.messageSuccess {
-    color: greenyellow;
-}
-.messageFailed {
-    color: red;
 }
