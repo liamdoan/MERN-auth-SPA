@@ -37,7 +37,6 @@ Database:
   ![Admin homepage](client/public/screenshots/homepage-admin.PNG)
 
 - "admin" dashboard, admin can manipulate database:
-  ![admin dashboard](client/public/screenshots/dashboard-admin.PNG)
   ![admin dashboard edit roles](client/public/screenshots/dashboard-admin-assign-roles.PNG)
   ![admin dashboard edit info](client/public/screenshots/dashboard-admin-edit.PNG)
   ![admin dashboard delete](client/public/screenshots/dashboard-admin-delete.PNG)
