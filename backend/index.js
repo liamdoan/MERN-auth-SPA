@@ -10,7 +10,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin:"https://mern-auth-spa-client.vercel.app",
+    origin: process.env.DEVELOPMENT_CLIENT_URL,
     credentials: true
 }));
 
