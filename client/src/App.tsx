@@ -50,7 +50,6 @@ function App() {
         <div>
             <Routes>
                 <Route path="/" element={<GeneralHome />}/>
-                 {/* protected candidate HOME */}
                 <Route path="/home" element={<UserHome />}/>
                 <Route
                     path="/admin-dashboard"
