@@ -27,8 +27,26 @@ Database:
 
 ## Screenshot
 
-![Email Screenshots](client/public/screenshots/email-screens.png)
+- Email view:
+  ![Email Screenshots](client/public/screenshots/email-screens.png)
 
-![UI Screenshots](client/public/screenshots/user-screens.png)
+- User Authentication flowview:
+  ![UI Screenshots](client/public/screenshots/user-screens.png)
 
-![Main View](client/public/screenshots/main-view.PNG)
+- "Admin" role view:
+  ![Admin homepage](client/public/screenshots/homepage-admin.PNG)
+
+- "admin" dashboard, admin can manipulate database:
+  ![admin dashboard](client/public/screenshots/dashboard-admin.PNG)
+  ![admin dashboard edit roles](client/public/screenshots/dashboard-admin-assign-roles.PNG)
+  ![admin dashboard edit info](client/public/screenshots/dashboard-admin-edit.PNG)
+  ![admin dashboard delete](client/public/screenshots/dashboard-admin-delete.PNG)
+
+- "Manager" role view:
+  ![Manager homepage](client/public/screenshots/homepage-manager.PNG)
+
+- "Manager" dashboard, read only:
+  ![manager dashboard](client/public/screenshots/dashboard-manager.PNG)
+
+- "User" role view:
+  ![Main View](client/public/screenshots/homepage-user.PNG)
