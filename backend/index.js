@@ -10,7 +10,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.DEVELOPMENT_CLIENT_URL,
     credentials: true
 }));
 app.use(express.json());
