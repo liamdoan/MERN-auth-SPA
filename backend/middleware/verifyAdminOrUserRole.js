@@ -1,4 +1,4 @@
-const userModel = require("../models/userModel");
+const userModel = require("../database/models/userModel");
 
 module.exports.verifyAdminOrUserRole = async (req, res, next) => {
     const { userId } = req.params; //userId of user to be modified

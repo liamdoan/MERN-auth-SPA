@@ -1,5 +1,5 @@
 const { sendPasswordResetEmail } = require("../../mailtrap/emailServices");
-const userModel = require("../../models/userModel");
+const userModel = require("../../database/models/userModel");
 const { generateResetToken } = require("../../utils/generateResetToken");
 
 module.exports.forgotPassword = async (req, res) => {

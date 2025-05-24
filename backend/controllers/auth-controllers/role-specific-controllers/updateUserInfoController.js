@@ -1,4 +1,4 @@
-const userModel = require("../../../models/userModel");
+const userModel = require("../../../database/models/userModel");
 
 module.exports.updateUserInfo = async (req, res) => {
     const {userId} = req.params

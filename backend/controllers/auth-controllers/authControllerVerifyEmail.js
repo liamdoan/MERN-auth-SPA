@@ -1,5 +1,5 @@
 const { sendWelcomeEmail } = require("../../mailtrap/emailServices");
-const userModel = require("../../models/userModel");
+const userModel = require("../../database/models/userModel");
 
 module.exports.verifyEmail = async (req, res) => {
     const {verificationCode} = req.body;

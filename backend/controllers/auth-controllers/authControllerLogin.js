@@ -1,4 +1,4 @@
-const userModel = require("../../models/userModel");
+const userModel = require("../../database/models/userModel");
 const bcryptjs = require('bcryptjs');
 const { generateTokenAndSetCookies } = require("../../utils/generateTokenAndSetCookies");
 

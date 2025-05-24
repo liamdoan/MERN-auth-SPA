@@ -31,7 +31,16 @@ if (process.env.NODE_ENV === "production") {
 	});
 }
 
-app.listen(PORT, () => {
-    connectMongo();
-    console.log(`Server is running on port ${PORT}`)
-});
+// ensure DB is connected before starting server
+const startServer = async () => {
+    try {
+        await connectMongo();
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    } catch (err) {
+        console.error("Failed to connect to MongoDB. Server not started.");
+    }
+};
+
+startServer();

@@ -1,4 +1,4 @@
-const userModel = require("../models/userModel");
+const userModel = require("../database/models/userModel");
 
 module.exports.verifyAdminRole = async (req, res, next) => {
     try {

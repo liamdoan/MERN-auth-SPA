@@ -1,4 +1,4 @@
-const userModel = require("../../models/userModel");
+const userModel = require("../../database/models/userModel");
 const { generateHashPassword } = require("../../utils/generateHashPassword");
 const { generateVerificationToken } = require("../../utils/generateVerificationToken");
 const { generateTokenAndSetCookies } = require("../../utils/generateTokenAndSetCookies");
