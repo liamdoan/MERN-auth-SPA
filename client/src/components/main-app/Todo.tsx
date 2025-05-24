@@ -2,10 +2,11 @@ import styles from './Todo.module.css';
 import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux"
 import axios from 'axios';
-import { baseUrl } from '../../utils/baseUrl';
 import Spinner from '../loading/Spinner';
 import { RootState } from '../../redux/store';
 import { TodoType, UserType } from '../../utils/types';
+
+const BASE_URL_TODO = import.meta.env.VITE_BASE_URL_TODO;
 
 const Todo = () => {
     const [todos, setTodos] = useState<TodoType[]>([]);
@@ -24,7 +25,7 @@ const Todo = () => {
     useEffect(() => {
         const fetchTodos = async () => {
             try {
-                const res = await axios.get(`${baseUrl}/get`, {
+                const res = await axios.get(`${BASE_URL_TODO}/get`, {
                     withCredentials: true
                 });
                 setTodos(res.data);
@@ -42,7 +43,7 @@ const Todo = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post(`${baseUrl}/save`, {
+            const res = await axios.post(`${BASE_URL_TODO}/save`, {
                 task: todo, description: desc
             }, {
                 withCredentials: true
@@ -58,7 +59,7 @@ const Todo = () => {
 
     const editTask = async (id: string) => {
         try {
-            const res = await axios.put(`${baseUrl}/update/${id}`, {
+            const res = await axios.put(`${BASE_URL_TODO}/update/${id}`, {
                 task: editingText, description: editingDesc
             }, {
                 withCredentials: true
@@ -91,7 +92,7 @@ const Todo = () => {
 
     const deleteTask = async (id: string) => {
         try {
-            await axios.delete(`${baseUrl}/delete/${id}`, {
+            await axios.delete(`${BASE_URL_TODO}/delete/${id}`, {
                 withCredentials: true
             });
             const updatedTodos = [...todos].filter((todo) => todo._id !== id);
@@ -103,7 +104,7 @@ const Todo = () => {
 
     const toggleCompleted = async (id: string) => {
         try {
-            const res = await axios.put(`${baseUrl}/toggle/${id}`, {}, {
+            const res = await axios.put(`${BASE_URL_TODO}/toggle/${id}`, {}, {
                 withCredentials: true
             });
             const updatedTodos = todos.map((todo: any) =>
