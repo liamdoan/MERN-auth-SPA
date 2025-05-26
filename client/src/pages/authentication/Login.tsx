@@ -93,6 +93,13 @@ const Login = () => {
                         </span>
                         <Link className={styles.forgotPasswordDirect} to={"/forgot-password"}>Click here.</Link>
                     </div>
+                    <div className={styles.noticeNotHaveAccount}>
+                        <span className={styles.noticeSpan}>
+                            Don't have an account yet?
+                            <span>&nbsp;</span>
+                        </span>
+                        <Link className={styles.signUpDirect} to={"/sign-up"}>Sign up.</Link>
+                    </div>
                 </form>
             </div>
         </div>
