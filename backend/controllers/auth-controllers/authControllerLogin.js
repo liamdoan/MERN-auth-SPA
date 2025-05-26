@@ -15,7 +15,7 @@ module.exports.logIn = async (req, res) => {
         };
 
         // prevent OAuth users from using email/password login
-        if (user.authProvider !== 'local') {
+        if (user.authProvider !== 'manual') {
             return res.status(400).json({ message: `Please log in using ${user.authProvider}` });
         }
 

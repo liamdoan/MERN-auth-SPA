@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         enum: ['manual', 'google', 'github'],
         // local means user signs up manually
-        default: 'local'
+        default: 'manual'
     },
     roles: {
         // an account can have multiple roles
