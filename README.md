@@ -3,7 +3,7 @@
 (all screenshots below)
 
 Full authentication SPA with Role-Based Access Control (RBAC), combined of 2 projects, [Auth-Model](https://github.com/liamdoan/react-MERN-auth-module) and [App](https://github.com/liamdoan/todo_app_mern)
-with React-Nodejs-Espress-MongoDB, redux. After loggin in, users can perform CRUD operation on and see `only their own data`.
+with `React-Nodejs-Espress-MongoDB`, `redux` and `OAuth 2.0` protocol. After loggin in, users can perform CRUD operation on and see `only their own data`.
 
 `Authentication flow`
 
@@ -35,6 +35,10 @@ Backend:
 Database:
 
 - MongoDB
+
+Authorization protocol:
+
+- OAuth 2.0
 
 ## Screenshot
 
