@@ -6,6 +6,6 @@ module.exports.authenticateGoogle = passport.authenticate('google', {
 });
 
 module.exports.authenticateGoogleCallback = passport.authenticate('google', {
-    failureRedirect: '/login',
+    failureRedirect: `${process.env.DEVELOPMENT_CLIENT_URL}/login`,
     session: false
 });

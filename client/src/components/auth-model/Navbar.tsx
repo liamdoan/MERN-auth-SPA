@@ -89,8 +89,15 @@ const Navbar = () => {
 
             setLoadingDelete(false);
             setIsPopupDeleteVisible(false);
+            setShowProfileMenu(false);
+            
+            // dispatch logout action to clear redux state
+            dispatch(logout());
 
-            navigate("/");
+            // replace the current route with the home route
+            // instead off adding a new one
+            // so user can't go back to deleted user page
+            navigate("/", { replace: true });
         } catch (error) {
             console.error(error);
             setLoadingDelete(false);

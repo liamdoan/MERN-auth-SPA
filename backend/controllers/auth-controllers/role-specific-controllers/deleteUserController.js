@@ -13,6 +13,17 @@ module.exports.deleteUser = async (req, res) => {
 
         await userModel.findByIdAndDelete(userId);
 
+        // clear auth cookie with same settings as login
+        // similar flow to logout controller
+        res.cookie('token', '', {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'none',
+            path: '/',
+            domain: process.env.NODE_ENV === "production" ? '.vercel.app' : undefined,
+            maxAge: 0 // makes cookie expire immediately
+        });
+
         return res.status(200).json({
             message: "User deleted ok!"
         })

@@ -130,8 +130,11 @@ export const deleteUser = async (userId: string) => {
     try {
         const response = await axios.delete(`${BASE_URL}/delete-user/${userId}`, {
             withCredentials: true
-        })
+        });
 
+        // call logout endpoint to ensure complete cleanup
+        await userLogout();
+        
         return response;
     } catch (error) {
         throw error;
