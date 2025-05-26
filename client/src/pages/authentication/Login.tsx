@@ -9,6 +9,9 @@ import { RootState } from '../../redux/store';
 import { userLogin } from '../../utils/authApiCalls';
 import LoadingBar from '../../components/loading/LoadingBar';
 import Spinner from '../../components/loading/Spinner';
+import ContinueWithOAuth from '../../components/auth-model/auth-form-components/continueWithOAuth';
+
+
 
 const Login = () => {
     const [email, setEmail] = useState<string>("");
@@ -86,6 +89,7 @@ const Login = () => {
                     { loading && <LoadingBar /> }
                     { messageSuccess && <span className={styles.messageSuccess}>{messageSuccess}</span> }
                     { messageFailed && <span className={styles.messageFailed}>{messageFailed}</span> }
+                    <ContinueWithOAuth title="Continue with Google" />
                     <div className={styles.noticeForgotPassword}>
                         <span className={styles.noticeSpan}>
                             Forgot your password?

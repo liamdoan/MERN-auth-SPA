@@ -23,6 +23,7 @@ module.exports.signUp = async (req, res) => {
             email,
             password: await generateHashPassword(password), //hashPassword
             name,
+            authProvider: 'manual',
             verificationToken: generateVerificationToken(), //verification code
             verificationTokenExpiresAt: Date.now() + 24*60*60*1000
         });

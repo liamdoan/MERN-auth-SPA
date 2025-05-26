@@ -14,6 +14,11 @@ module.exports.logIn = async (req, res) => {
             })
         };
 
+        // prevent OAuth users from using email/password login
+        if (user.authProvider !== 'local') {
+            return res.status(400).json({ message: `Please log in using ${user.authProvider}` });
+        }
+
         const isPasswordValid = await bcryptjs.compare(password, user.password);
 
         if(!isPasswordValid) {

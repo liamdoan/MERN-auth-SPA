@@ -12,7 +12,16 @@ const UserSchema = new mongoose.Schema({
     },
     password:{
         type: String,
-        require: true
+        require: false
+        // change from true to false to allow users to login
+        // with oAuth from 3rd party side as google, github, facebook, etc.
+        // no password is required for oAuth login
+    },
+    authProvider: {
+        type: String,
+        enum: ['manual', 'google', 'github'],
+        // local means user signs up manually
+        default: 'local'
     },
     roles: {
         // an account can have multiple roles

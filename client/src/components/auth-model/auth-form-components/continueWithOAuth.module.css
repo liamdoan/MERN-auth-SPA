@@ -1,0 +1,44 @@
+.oAuthButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 0.5rem;
+  }
+  
+  .line {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .orText {
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    font-size: 0.875rem;
+  }
+
+.oAuthButton {
+    margin: 8px 0 8px 0;
+    width: 100%;
+    align-self: center;
+    padding:10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.oAuthButton:hover {
+   border: 1px solid rgba(255, 255, 255, 0.5);
+}

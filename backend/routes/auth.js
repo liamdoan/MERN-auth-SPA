@@ -17,6 +17,8 @@ const { getAllUsersData } = require('../controllers/auth-controllers/role-specif
 const { updateUserRole } = require('../controllers/auth-controllers/role-specific-controllers/updateUserRoleController');
 const { updateUserInfo } = require('../controllers/auth-controllers/role-specific-controllers/updateUserInfoController');
 const { deleteUser } = require('../controllers/auth-controllers/role-specific-controllers/deleteUserController');
+const { authenticateGoogle, authenticateGoogleCallback } = require('../middleware/googlePassportMiddleware');
+const { googleOAuthCallback } = require('../controllers/auth-controllers/authControllerLoginOAuth');
 
 router.post("/signup", signUp);
 router.post("/verify-email", verifyEmail);
@@ -24,6 +26,9 @@ router.post("/forgot-password", forgotPassword);
 router.post("/reset-password/:token", resetPassword);
 router.post("/login", logIn);
 router.post("/logout", logOut);
+
+router.get('/google', authenticateGoogle);
+router.get('/google/callback', authenticateGoogleCallback, googleOAuthCallback);
 
 router.get("/check-auth", verifyToken, checkAuth);
 
