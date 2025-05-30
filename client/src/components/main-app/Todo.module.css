@@ -1,15 +1,16 @@
+
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 600px;
-    min-height: 600px;
     background: #161a2b;
     text-align: center;
     margin: auto;
     border-radius: 10px;
     padding-bottom: 2rem;
+    min-height: 500px;
 }
   
 h1 {
@@ -33,20 +34,28 @@ h1 {
     flex-direction: column;
 }
 
+.filterInput,
 .todoInput,
 .descInput {
     padding: 14px 32px 14px 16px;
     border-radius: 4px 0 0 4px;
     border: 2px solid #5d0cff;
     outline: none;
-    width: 300px;
     background: transparent;
     color: #fff;
+}
+.filterInput {
+    width: 100px;
+}
+.todoInput,
+.descInput {
+    width: 300px;
 }
 .todoInput {
     margin-bottom: 4px;
 }
 
+.filterInput::placeholder,
 .todoInput::placeholder,
 .descInput::placeholder {
     color: #989696;

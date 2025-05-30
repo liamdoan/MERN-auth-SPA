@@ -1,4 +1,5 @@
 const todoModel = require('../../database/models/todoModel');
+const esClient = require('../../elastic-search/elasticSearch');
 
 module.exports.getTodos = async (req, res) => {
     try {
@@ -20,6 +21,20 @@ module.exports.createTodos = async (req, res) => {
             userId: req.userId,
             task,
             description,
+        });
+
+        // index new todo into elastic search
+        await esClient.index({
+            index: 'todo-mern-auth-todos',
+            id: newTodo._id.toString(), // id of todo doc, required
+            document: {
+                task: newTodo.task,
+                description: newTodo.description,
+                isCompleted: newTodo.isCompleted,
+                userId: newTodo.userId.toString(),
+                createdAt: newTodo.createdAt,
+                updatedAt: newTodo.updatedAt,
+            }
         });
 
         res.status(201).json({
@@ -60,6 +75,19 @@ module.exports.updateToDo = async (req, res) => {
             {task, description},
             {new: true}
         );
+
+        await esClient.index({
+            index: 'todo-mern-auth-todos',
+            id: updatedTodo._id.toString(), // id of todo doc, required
+            document: {
+                task: updatedTodo.task,
+                description: updatedTodo.description,
+                isCompleted: updatedTodo.isCompleted,
+                userId: updatedTodo.userId.toString(),
+                createdAt: updatedTodo.createdAt,
+                updatedAt: updatedTodo.updatedAt,
+            }
+        });
 
         res.status(200).json({
             message: "Todo updated!",
@@ -129,7 +157,13 @@ module.exports.deleteToDo = async (req, res) => {
             })
         };
 
+        await esClient.delete({
+            index: 'todo-mern-auth-todos',
+            id: id.toString(),
+        });
+
         await todoModel.findByIdAndDelete(id);
+   
         
         res.status(200).json({
             message: "Task deleted!"

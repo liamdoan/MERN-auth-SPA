@@ -65,3 +65,16 @@ export const userToggleCompleted = async (id: string) => {
         throw error;
     }
 };  
+
+export const searchTodos = async (query: string) => {
+    try {
+        const response = await axios.get(`${BASE_URL_TODO}/search?query=${query}`, {
+            withCredentials: true
+        });
+
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }    
+}
